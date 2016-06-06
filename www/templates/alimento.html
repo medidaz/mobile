@@ -11,8 +11,9 @@
     </p>
     <ion-list>
       <ion-item class="item-icon-right" ng-repeat="medicao in alimento.Medicaos" type="item-text-wrap">
-        <h2>{{medicao.Fonte.descricao}}</h2>
-        <h3>{{medicao.Medida.descricao}}</h3>
+        <h2>{{medicao.Medida.descricao}}</h2>
+        <h2>{{medicao.value}}</h2>
+        <h3>{{medicao.Fonte.descricao}}</h3>
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
     </ion-list>
