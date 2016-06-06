@@ -32,8 +32,11 @@ angular.module('medidaz.controllers', [])
     }
   })
 
-  .controller('AlimentosCtrl', function ($scope, $stateParams, AlimentoAPIService) {
-    $scope.chat = Chats.get($stateParams.chatId);
+
+  .controller('AlimentosCtrl', function ($scope, $stateParams, AlimentoAPIService, $ionicLoading ) {
+     AlimentoAPIService.getAlimento($stateParams.idAlimento).then(function (data) {
+        $scope.alimento = data.alimento[0];
+      });
   })
 
   .controller('SugestaoCtrl', function ($scope) {

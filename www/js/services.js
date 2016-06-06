@@ -17,6 +17,11 @@ angular.module('medidaz.services', [])
         return $http.post(url + "alimento/search/" , data).then(function (response) {
           return response.data;
         });
+      },
+      getAlimento: function (id) {        
+        return $http.get(url + "alimento/"+ id).then(function (response) {
+          return response.data;
+        });
       }      
     };
   })

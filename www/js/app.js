@@ -43,6 +43,16 @@ angular.module('medidaz', ['ionic', 'medidaz.controllers', 'medidaz.services'])
         }
       })
       
+      .state('tab.alimento', {
+        url: '/alimento/:idAlimento',
+        views: {
+          'tab-consulta': {
+            templateUrl: 'templates/alimento.html',
+            controller: 'AlimentosCtrl'
+          }
+        }
+      })
+      
       .state('tab.sugestao', {
         url: '/sugestao',
         views: {
