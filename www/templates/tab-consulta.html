@@ -1,0 +1,21 @@
+<ion-view view-title="Alimentos">
+  <ion-content>
+      <label class="item item-input">
+				<input type="text" placeholder="Alimento" ng-model="consulta.texto">
+			</label>
+
+      <button class="button button-positive button-full" ng-click="consultar()">
+				Buscar!
+			</button>
+
+      <ion-list>
+        <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="alimento in alimentos" type="item-text-wrap" href="#/tab/alimento/{{alimento.id}}">
+          <h2>{{alimento.descricao}}</h2>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+          <ion-option-button class="button-assertive" ng-click="remove(chat)">
+            Delete
+          </ion-option-button>
+        </ion-item>
+      </ion-list>
+  </ion-content>
+</ion-view>
