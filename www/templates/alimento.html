@@ -1,20 +1,18 @@
-<!--
-  This template loads for the 'tab.friend-detail' state (app.js)
-  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
-  The FriendsCtrl pulls data from the Friends service (service.js)
-  The Friends service returns an array of friend data
--->
-<ion-view view-title="{{alimento.descricao}}">
+<ion-view view-title="{{alimento.descricao}}" ng-controller="AlimentosCtrl">
   <ion-content class="padding">
     <p>
-      {{alimento.descricao}}
+      <h1>{{alimento.descricao}}<h1>
     </p>
     <ion-list>
-      <ion-item class="item-icon-right" ng-repeat="medicao in alimento.Medicaos" type="item-text-wrap">
-        <h2>{{medicao.Medida.descricao}}</h2>
-        <h2>{{medicao.value}}</h2>
-        <h3>{{medicao.Fonte.descricao}}</h3>
-        <i class="icon ion-chevron-right icon-accessory"></i>
+      <ion-item class="item-icon-right" ng-repeat="medida in alimento.medidas" type="item-text-wrap">
+        <h2>{{medida.descricao}}</h2>
+        <i class="icon ion-arrow-down-b icon-accessory" ng-click="medida.showMedicoes = !medida.showMedicoes"></i>
+        
+        <ul ng-show="medida.showMedicoes">
+          <li  ng-repeat="medicao in medida.medicoes" type="item-text-wrap">
+              {{medicao.valor}}g - {{medicao.fonte}}
+          </li>
+        </ul>
       </ion-item>
     </ion-list>
   </ion-content>
